@@ -49,9 +49,14 @@
         }, 1000);
         </script>
     </body> -->
-
+    <script>
+        const countDownDate = new Date("June 23, 2022 13:55:00").getTime();
+        const now = new Date().getTime();
+        const timeleft = countDownDate - now;
+        document.getElementById("message").innerHTML = "You will be redirected to the experiment in " + timeleft;
+    </script>
     <body>
-        You will be redirected to the experiment at 1:15 EST
+        <p id="message">You will be redirected to the experiment in x seconds</p>
     </body>
 
     <meta http-equiv="refresh" content="10;URL='https://deliberation-9fltg.ondigitalocean.app/'" />
