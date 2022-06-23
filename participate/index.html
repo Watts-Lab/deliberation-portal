@@ -22,12 +22,12 @@
 
         <script>
         // The data/time we want to countdown to
-        const queryString = window.location.search;
-        const urlParams = new URLSearchParams(queryString);
-        const month = urlParams.get('month');
-        const day = urlParams.get('day')
-        const time = urlParams.get('time');
-        const countDownDate = new Date(month + day +', 2022' + time).getTime();
+        // const queryString = window.location.search;
+        // const urlParams = new URLSearchParams(queryString);
+        // const month = urlParams.get('month');
+        // const day = urlParams.get('day')
+        // const time = urlParams.get('time');
+        const countDownDate = new Date("June 23, 2022 14:39:00").getTime();
     
         // Run myfunc every second
         const myfunc = setInterval(function() {
