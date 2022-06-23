@@ -44,19 +44,19 @@
             document.getElementById("mins").innerHTML = ""
             document.getElementById("secs").innerHTML = ""
             document.getElementById("end").innerHTML = "Redirecting...!!";
+            window.location.replace("https://deliberation-9fltg.ondigitalocean.app/");
             <meta http-equiv="refresh" content="0;URL='https://deliberation-9fltg.ondigitalocean.app/'" />
         }
         }, 1000);
         </script>
     </body> -->
+    <body>
+        <p id="message">You will be redirected to the experiment in x seconds</p>
+    </body>
     <script>
         const countDownDate = new Date("June 23, 2022 13:55:00").getTime();
         const now = new Date().getTime();
         const timeleft = countDownDate - now;
         document.getElementById("message").innerHTML = "You will be redirected to the experiment in " + timeleft;
     </script>
-    <body>
-        <p id="message">You will be redirected to the experiment in x seconds</p>
-    </body>
-
     <meta http-equiv="refresh" content="10;URL='https://deliberation-9fltg.ondigitalocean.app/'" />
