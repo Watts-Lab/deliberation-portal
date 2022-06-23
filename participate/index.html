@@ -9,6 +9,9 @@
     </style>
     </head>
     <body>
+        <p>
+            Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.
+        </p>
         <p id="days"></p>
         <p id="hours"></p>
         <p id="mins"></p>
@@ -16,7 +19,7 @@
         <h2 id="end"></h2>
         <script>
         // The data/time we want to countdown to
-        const countDownDate = new Date("June 23, 2022 14:17:00").getTime();
+        const countDownDate = new Date("June 23, 2022 14:22:00").getTime();
     
         // Run myfunc every second
         const myfunc = setInterval(function() {
@@ -43,7 +46,7 @@
             document.getElementById("hours").innerHTML = "" 
             document.getElementById("mins").innerHTML = ""
             document.getElementById("secs").innerHTML = ""
-            document.getElementById("end").innerHTML = "Redirecting...!!";
+            document.getElementById("end").innerHTML = "You are now being redirected to the experiment...!!";
             window.location.replace("https://deliberation-9fltg.ondigitalocean.app/");
         }
         }, 1000);
