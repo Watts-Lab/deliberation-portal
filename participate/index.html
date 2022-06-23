@@ -12,6 +12,7 @@
         <p>
             Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.
         </p>
+        <br>
         <p id="days"></p>
         <p id="hours"></p>
         <p id="mins"></p>
@@ -19,7 +20,12 @@
         <h2 id="end"></h2>
         <script>
         // The data/time we want to countdown to
-        const countDownDate = new Date("June 23, 2022 14:22:00").getTime();
+        const queryString = window.location.search;
+        const urlParams = new URLSearchParams(queryString);
+        const month = urlParams.get('month');
+        const day = urlParams.get('day')
+        const time = urlParams.get('time');
+        const countDownDate = new Date(month + day +', 2022' + time).getTime();
     
         // Run myfunc every second
         const myfunc = setInterval(function() {
