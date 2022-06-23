@@ -7,17 +7,19 @@
       margin-top: 0px;
     }
     </style>
+    <img src="logo_penncss_black text blue network.png">
     </head>
     <body>
-        <p>
+        <p className="text-md text-gray-500">
             Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.
         </p>
         <br>
-        <p id="days"></p>
-        <p id="hours"></p>
-        <p id="mins"></p>
-        <p id="secs"></p>
-        <h2 id="end"></h2>
+        <p id="days" className="text-sm text-gray-500"></p>
+        <p id="hours" className="text-sm text-gray-500"></p>
+        <p id="mins" className="text-sm text-gray-500"></p>
+        <p id="secs" className="text-sm text-gray-500"></p>
+        <h2 id="end" className="text-sm text-gray-500"></h2>
+
         <script>
         // The data/time we want to countdown to
         const queryString = window.location.search;
