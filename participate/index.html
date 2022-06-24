@@ -1,10 +1,12 @@
 <head>
     <meta name="viewport" http-equiv="default-style" content="width=device-width, initial-scale=1">
     <style>
+    div {
+        padding-top: 70px;
+        padding-bottom: 70px;
+    }
     .center {
         margin: auto;
-        width: 60%;
-        border: 5px solid #000000;
         padding: 10px;
     }
     p {
@@ -19,15 +21,20 @@
       text-align: center;
     }
     </style>
-    <img class="center" src="logo_penncss_black text blue network.png">
+    <div class="center">
+        <img class="center" src="logo_penncss_black text blue network.png">
+    </div>
     <br>
     </head>
     <body>
-        <p style="text-align: center">
-            Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.
-        </p>
-        <br>
         <div class="center">
+            <p style="text-align: center">
+                Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.
+            </p>
+        </div>
+        
+        <br>
+        <div class="center" style="border: 5px solid #000000">
             <p style="font-size: 30px" id="days"></p>
             <p style="font-size: 30px" id="hours"></p>
             <p style="font-size: 30px" id="mins"></p>
