@@ -59,11 +59,15 @@
         // const day = urlParams.get('day')
         // const time = urlParams.get('time');
         const countDownDate = new Date("June 24, 2022 13:15:00").getTime();
-    
+        
         // Run myfunc every second
         const myfunc = setInterval(function() {
-    
-        let now = new Date().getTime();
+        async function getTime() {
+            dateTime = await fetch("http://worldtimeapi.org/api/timezone/America/New_York").datetime;
+            const date = dateTime.substring(0, 18);
+            return date
+        }
+        let now = new Date(getTime());
         let timeleft = countDownDate - now;
             
         // Calculating the days, hours, minutes and seconds left
