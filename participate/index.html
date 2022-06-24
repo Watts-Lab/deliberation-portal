@@ -64,9 +64,9 @@
         // Run myfunc every second
         const myfunc = setInterval(function() {
         async function getTime() {
-            const fetched = await fetch("http://worldtimeapi.org/api/timezone/America/New_York").data;
+            const fetched = await fetch("http://worldtimeapi.org/api/timezone/America/New_York");
             console.log("fetched " + fetched);
-            const dateTime = fetched[datetime];
+            const dateTime = fetched['datetime'];
             console.log(dateTime);
             const date = dateTime.substring(0, 18);
             return date
