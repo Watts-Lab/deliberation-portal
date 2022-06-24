@@ -65,10 +65,9 @@
         const myfunc = setInterval(function() {
         function getTime() {
             const fetched = fetch("http://worldtimeapi.org/api/timezone/America/New_York").then(response => response.json());
-            console.log("fetched " + fetched);
             const dateTime = fetched['datetime'];
-            console.log(dateTime);
             const date = dateTime.substring(0, 19);
+            console.log(date);
             return date
         }
         let now = new Date(getTime());
