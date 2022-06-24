@@ -56,10 +56,9 @@
         const queryString = window.location.search;
         const urlParams = new URLSearchParams(queryString);
         const month = urlParams.get('month');
-        console.log("month");
-        // const day = urlParams.get('day')
-        // const hour = urlParams.get('time');
-        // const minute= urlParams.get('minute')
+        const day = urlParams.get('day')
+        const hour = urlParams.get('hour');
+        const minute= urlParams.get('minute')
         
         //input is year, month (0 indexed), day, hour, minute in UTC
         const countDownDate = new Date(Date.UTC(2022, month, 24, 17, 15)).getTime();
