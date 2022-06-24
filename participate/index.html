@@ -1,1 +1,103 @@
-<meta http-equiv="refresh" content="0;URL='https://deliberation-9fltg.ondigitalocean.app/'" />
+<head>
+    <meta name="viewport" http-equiv="default-style" content="width=device-width, initial-scale=1">
+    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+    <style>
+    div {
+        padding-top: 70px;
+        padding-bottom: 100px;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+    .center {
+        margin: auto;
+        width: 40%;
+        padding: 2px;
+    }
+    p {
+      display: inline;
+      font-size: 20px;
+      margin-top: 100px;
+      margin-bottom: 100px;
+      margin-right: 150px;
+      margin-left: 80px;
+      color: #525151;
+      font-family: 'Courier New';
+      text-align: center;
+    }
+    img {
+        padding-top: 70px;
+        padding-bottom: 70px;
+        padding-left: 30px;
+        padding-right: 30px;
+        margin-bottom: 100px;
+        width: 40%;
+        padding: 2px;
+    }
+    </style>
+        <img src="logo_penncss_black text blue network.png">
+    <br>
+    </head>
+    <body>
+        <div class="center">
+            <p style="text-align: center">Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.</p>
+        </div>
+        
+        <br>
+        <div class="center" style="border: 1px solid #747373">
+            <!-- <p style="font-size: 30px" style="display: inline-block;" id="days"></p> -->
+            <p style="font-size: 30px" style="display: inline-block;" id="hours"></p>
+            <p style="font-size: 30px" style="display: inline-block;" id="mins"></p>
+            <p style="font-size: 30px" style="display: inline-block;" id="secs"></p>
+            <p style="font-size: 30px" style="display: inline-block;" id="end"></p>
+        </div>
+        
+
+        <script>
+        // const queryString = window.location.search;
+        // const urlParams = new URLSearchParams(queryString);
+        // const month = urlParams.get('month');
+        // const day = urlParams.get('day')
+        // const hour = urlParams.get('hour');
+        // const minute= urlParams.get('minute')
+        
+        //input is year, month (0 indexed), day, hour, minute in UTC
+        //const countDownDate = new Date(Date.UTC(2022, month, day, hour, minute)).getTime();
+        const countDownDate = new Date(Date.UTC(2022, 5, 24, 17, 15)).getTime();
+        // async function getTimeAPI() {
+        //     const fetched = await fetch("http://worldtimeapi.org/api/timezone/America/New_York").then(response => response.json());
+        //     const dateTime = fetched['datetime'];
+        //     const date = dateTime.substring(0, 19);
+        //     console.log(date);
+        //     return date
+        // }
+        
+        // Run myfunc every second
+        const myfunc = setInterval(function() {
+        let now = new Date().getTime();
+        let timeleft = countDownDate - now;   
+        // Calculating the days, hours, minutes and seconds left
+        let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
+        let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        let minutes = Math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+        let seconds = Math.floor((timeleft % (1000 * 60)) / 1000);
+            
+        // Result is output to the specific element
+        // document.getElementById("days").innerHTML = days + "d "
+        document.getElementById("hours").innerHTML = hours + "h " 
+        document.getElementById("mins").innerHTML = minutes + "m " 
+        document.getElementById("secs").innerHTML = seconds + "s " 
+            
+        // Display the message when countdown is over
+        if (timeleft < 0) {
+            clearInterval(myfunc);
+            // document.getElementById("days").innerHTML = ""
+            document.getElementById("hours").innerHTML = "" 
+            document.getElementById("mins").innerHTML = ""
+            document.getElementById("secs").innerHTML = ""
+            document.getElementById("end").innerHTML = "You are now being redirected to the experiment...!!";
+            window.location.replace("https://deliberation-9fltg.ondigitalocean.app/");
+        }
+        }, 1000);
+        </script>
+    </body>
+

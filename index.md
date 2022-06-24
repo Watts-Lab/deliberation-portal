@@ -1,3 +1,0 @@
-# Deliberation Study
-
-Under construction
