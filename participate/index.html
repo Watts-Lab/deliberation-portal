@@ -60,18 +60,18 @@
         // const day = urlParams.get('day')
         // const time = urlParams.get('time');
         const countDownDate = new Date("June 24, 2022 13:15:00").getTime();
-        async function getTimeAPI() {
-            const fetched = await fetch("http://worldtimeapi.org/api/timezone/America/New_York").then(response => response.json());
-            const dateTime = fetched['datetime'];
-            const date = dateTime.substring(0, 19);
-            console.log(date);
-            return date
-        }
-        let now = new Date(getTimeAPI());
-        let timeleft = countDownDate - now;
+        // async function getTimeAPI() {
+        //     const fetched = await fetch("http://worldtimeapi.org/api/timezone/America/New_York").then(response => response.json());
+        //     const dateTime = fetched['datetime'];
+        //     const date = dateTime.substring(0, 19);
+        //     console.log(date);
+        //     return date
+        // }
+        
         // Run myfunc every second
         const myfunc = setInterval(function() {
-        timeleft--;    
+        let now = new Date().getTime();
+        let timeleft = countDownDate - now;   
         // Calculating the days, hours, minutes and seconds left
         let days = Math.floor(timeleft / (1000 * 60 * 60 * 24));
         let hours = Math.floor((timeleft % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
