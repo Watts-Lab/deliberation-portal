@@ -39,11 +39,11 @@
     </head>
     <body>
         <div class="center">
-            <p style="text-align: center">Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.</p>
+            <p style="text-align: center" id="Hello">Hello, the experiment has not started yet. Please wait, and you will be redirected when it begins.</p>
         </div>
         
         <br>
-        <div class="center" style="border: 1px solid #747373">
+        <div id="timer" class="center" style="border: 1px solid #747373">
             <!-- <p style="font-size: 30px" style="display: inline-block;" id="days"></p> -->
             <p style="font-size: 30px" style="display: inline-block;" id="hours"></p>
             <p style="font-size: 30px" style="display: inline-block;" id="mins"></p>
@@ -71,6 +71,7 @@
         //     console.log(date);
         //     return date
         // }
+        const endWindowMs = countDownDate + (10 * 60000)
         
         // Run myfunc every second
         const myfunc = setInterval(function() {
@@ -87,18 +88,59 @@
         document.getElementById("hours").innerHTML = hours + "h " 
         document.getElementById("mins").innerHTML = minutes + "m " 
         document.getElementById("secs").innerHTML = seconds + "s " 
-            
+
         // Display the message when countdown is over
         if (timeleft < 0) {
-            clearInterval(myfunc);
-            // document.getElementById("days").innerHTML = ""
-            document.getElementById("hours").innerHTML = "" 
-            document.getElementById("mins").innerHTML = ""
-            document.getElementById("secs").innerHTML = ""
-            document.getElementById("end").innerHTML = "You are now being redirected to the experiment...!!";
-            window.location.replace("https://deliberation-9fltg.ondigitalocean.app/");
+            let untilWindow = endWindowMs - new Date().getTime();
+            let windowMinutes = Math.floor((untilWindow % (1000 * 60 * 60)) / (1000 * 60));
+            let windowSeconds = Math.floor((untilWindow % (1000 * 60)) / 1000);
+            if (untilWindow > 0) {
+                document.getElementById("hours").innerHTML = "" 
+                document.getElementById("mins").innerHTML = ""
+                document.getElementById("secs").innerHTML = ""
+                document.getElementById("end").innerHTML = "You are now being redirected to the experiment...!!";
+                window.location.replace("https://deliberation-9fltg.ondigitalocean.app/");
+            } else {
+                document.getElementById("end").innerHTML = "";
+                document.getElementById("timer").style.display = "none";
+                document.getElementById("Hello").innerHTML = "Sorry, the window to join the experiment has closed. Thank you for coming and please try again next week.";
+            }
+
+            
         }
         }, 1000);
+
+
+
+
+        // let msLeft;
+            // let endTime;
+            // let hours;
+            // let minutes;
+            // let time;
+            // function updateTimer() {
+            //     msLeft = endTime - (+new Date);
+            //     if ( msLeft < 1000 ) {
+            //         document.getElementById("end").innerHTML = "Sorry, the window to participate in experiments has closed. Thank you for coming, and please try again next week!";
+            //     } else {
+            //         time = new Date( msLeft );
+            //         hours = time.getUTCHours();
+            //         mins = time.getUTCMinutes();
+            //         element.innerHTML = (hours ? hours + ':' + twoDigits( mins ) : mins) + ':' + twoDigits( time.getUTCSeconds() );
+            //         setTimeout( updateTimer, time.getUTCMilliseconds() + 500 );
+            //     }
+            // }
+            // element = document.getElementById( elementName );
+            // // 60 * number of minutes + number of seconds
+            // endTime = (+new Date) + 1000 * (60*10 + 0) + 500;
+            // updateTimer();
         </script>
+        
     </body>
+
+
+
+
+
+    
 
