@@ -40,7 +40,7 @@
     const submitURL = urlParams.get("turkSubmitTo") + "/mturk/externalSubmit";
 
     // Populate form with URL parameters
-    $("#turkSubmissionForm").attr("action", urlParams.get("turkSubmitTo"));
+    $("#turkSubmissionForm").attr("action", submitURL);
     $("#assignmentId").val(urlParams.get("assignmentId"));
     $("#workerId").val(urlParams.get("workerId"));
     $("#hitId").val(urlParams.get("hitId"));
