@@ -41,8 +41,8 @@
     // Populate form with URL parameters
     $("#turkSubmissionForm").attr("action", urlParams.get("turkSubmitTo"));
     $("#assignmentId").val(urlParams.get("assignmentId"));
-    $("#workerId").val(urlParamsqueryDict["workerId"]);
-    $("#hitId").val(queryDict["hitId"]);
+    $("#workerId").val(urlParams.get("workerId"));
+    $("#hitId").val(urlParams.get("hitId"));
 
     //   //Pop up a confirmation message, populate user-input field, and send out the form.
     //   function endDialog()
