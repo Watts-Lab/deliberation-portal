@@ -37,6 +37,7 @@
 
   <script>
     const urlParams = new URLSearchParams(window.location.search);
+    const submitURL = urlParams.get("turkSubmitTo") + "/mturk/externalSubmit";
 
     // Populate form with URL parameters
     $("#turkSubmissionForm").attr("action", urlParams.get("turkSubmitTo"));
