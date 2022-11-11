@@ -115,7 +115,7 @@
           document.getElementById("end").innerHTML =
             "You are now being redirected to the experiment...!!";
           window.location.replace(
-            "https://deliberation-9fltg.ondigitalocean.app/"
+            `https://deliberation-9fltg.ondigitalocean.app/{window.location.search}`
           );
         } else {
           document.getElementById("end").innerHTML = "";
