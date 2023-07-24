@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@focus-reactive/react-yaml": "^1.1.2",
+    "@uiw/react-textarea-code-editor": "^2.1.7",
     "autoprefixer": "10.4.14",
     "eslint": "8.44.0",
     "eslint-config-next": "13.4.9",
@@ -19,6 +20,7 @@
     "postcss": "8.4.25",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "styled-components": "^6.0.5",
     "tailwindcss": "3.3.2"
   }
 }
