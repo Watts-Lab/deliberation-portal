@@ -26,16 +26,14 @@ const ComponentWrapper = styled.div`
 
 const TimeWrapper = styled.div``
 
-export function Stage({title, components, duration}) {
+export function Stage({title, components, duration, width}) {
     return (
-        <div style={{minHeight: "100vh", display: "flex", flexDirection: "column"}}>
+        <div style={{ width: width, minHeight: "100vh", display: "flex", flexDirection: "column", padding: "10px"}}>
             <h3>{title}</h3>
             <ComponentContainer>
                 <ComponentWrapper>
                     {components}
                     {/* this will actually be handled by the parser */}
-                    <StageComponent type="Prompt" children={["file: *.md", "showToPositions: 0"]}/>
-                    <StageComponent type="SubmitButton"/>
                 </ComponentWrapper>
                 <Button children={"Add Component"}/>
             </ComponentContainer>
