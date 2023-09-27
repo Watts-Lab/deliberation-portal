@@ -3,6 +3,7 @@ import CodeEditor from '@uiw/react-textarea-code-editor';
 import { useState, useEffect } from 'react';
 import styled from 'styled-components';
 import {Button} from './Button';
+import { parse, stringify } from 'yaml'
 const ConfigEditor = styled.div`
   width: 40%;
   height: 100vh;
@@ -22,15 +23,33 @@ export default function TreatmentEditor() {
 
   function handleChange(evn) {
     setCode(evn.target.value);
+    localStorage.setItem("code", evn.target.value)
     console.log(code);
   }
-
   
 
   function handleSave(e) {
-    //TODO parse, probably save somewhere more intelligent too
     e.preventDefault()
+    setCode(e.target.value)
     localStorage.setItem("code", code);
+    const yamlObj = parse(code)[0]
+    //Parse obj to extract components
+    const gameStages = yamlObj["gameStages"] //array of each stage
+    console.log(gameStages)
+    for (let i = 0; i < gameStages.length; i++) {
+      const stage = gameStages[i]
+      console.log(stage);
+      //stage has a name, duration, elements
+      const elts = stage.elements
+      console.log(elts.length);
+
+      //TODO - THIS IS AN INFINITE LOOP!
+      // for (let j = 0; j < elts.length; i++) {
+      //   const elt = elts[j]
+      //   const type = elt["type"]
+      //   //element has a type and other stuff based on elt.type
+      // } 
+    }
   }
 
   return (
@@ -50,7 +69,7 @@ export default function TreatmentEditor() {
         />
       </div>
       <div style={{backgroundColor: "#F0F2F6"}}>
-        <Button children="Save Draft" handleClick={(e) => handleSave(e)}/> {/*TODO - implement handleClick to call yaml parser */}
+        <Button children="Save Draft" handleClick={(e) => handleSave(e)}/> 
       </div>
       
     </ConfigEditor>
