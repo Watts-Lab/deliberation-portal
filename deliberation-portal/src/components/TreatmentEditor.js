@@ -43,12 +43,11 @@ export default function TreatmentEditor() {
       const elts = stage.elements
       console.log(elts.length);
 
-      //TODO - THIS IS AN INFINITE LOOP!
-      // for (let j = 0; j < elts.length; i++) {
-      //   const elt = elts[j]
-      //   const type = elt["type"]
-      //   //element has a type and other stuff based on elt.type
-      // } 
+      const eltComponents = []
+      for (let j = 0; j < elts.length; j++) {
+        const elt = elts[j]
+        eltComponents.push(<Element elt handleChange />)
+      } 
     }
   }
 
